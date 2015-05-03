@@ -3,33 +3,18 @@ layout: page
 title: Setting up
 ---
 
-It is advised to use our provided Vagrant images, to let this
-hands on lab work smoothly as explained below. You can download the VirtualBox 
-image and VirtualBox install packages from our server (see below). 
+It is advised to use our provided images, to let this
+hands on lab work smoothly as explained below.
+
 We also provide USB sticks to copy the VirtualBox image and optionally install
 VirtualBox first.
 
 If you are for some reason unable to install either,
 please pair up with someone else, and try it later at home.
 
-## Find our network 
-
-We provide a network for this lab, so that we are less dependent on the
-conference wifi. Our network is (password 'helloqwan'):
-
-```
-QWAN
-```
-
 ## Copy what you need 
 
-Navigate to 
-
-```
-http://192.168.4.4/
-```
-
-and download:
+download:
 
 * VirtualBox (if needed)
 * Our HandsOnDeployment image

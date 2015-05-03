@@ -26,7 +26,7 @@ containers_
 Type:
 
 ```
-docker run -it --rm qwan-registry:5000/ubuntu_base /bin/echo "Hello Docker"
+docker run -it --rm qwan/ubuntu_base /bin/echo "Hello Docker"
 ```
 
 The output should show that it is downloading your container. Finally
@@ -38,9 +38,8 @@ Nice huh?!
 
 ## What happened?
 
-Docker downloaded the docker image ubuntu_base from the qwan-registry,
-which runs on our server on port 5000, then it created a container
-from the image, fired it up, attached a terminal to it, ran 
+Docker downloaded the docker image ubuntu_base from the docker-repository,
+then it created a container from the image, fired it up, attached a terminal to it, ran
 
 ```
 /bin/echo "Hello Docker" 
@@ -55,8 +54,8 @@ A bit of a complicated way of saying "Hello Docker", don't you think?
 The first two lines of the output are straightforward. 
 
 ```
-Unable to find image 'qwan-registry:5000/ubuntu_base' locally  
-Pulling repository qwan-registry:5000/ubuntu_base
+Unable to find image 'qwan/ubuntu_base' locally
+Pulling repository qwan/ubuntu_base
 ```
 
 The image you are trying to start as container, is not available. It
@@ -107,7 +106,7 @@ Now try to run the same command line but replace _/bin/echo ..._ by
 _/bin/bash_ like:
 
 ```
-docker run -it --rm qwan-registry:5000/ubuntu_base /bin/bash
+docker run -it --rm qwan/ubuntu_base /bin/bash
 ```
 
 Notice that you are logged in to some terminal as root, indicated by:
@@ -164,8 +163,7 @@ Let's start the same command we saw earlier, but in a loop and detached.
 Type on one line:
 
 ```
-  docker run -d qwan-registry:5000/ubuntu_base
-  /bin/bash -c 'while true; do echo "Hello Docker"; sleep 2; done'
+  docker run -d qwan/ubuntu_base  /bin/bash -c 'while true; do echo "Hello Docker"; sleep 2; done'
 ```
 
 The only output you get is a hash of the started container. 
@@ -221,8 +219,7 @@ docker start condescending_hypatia
 and
 
 ```
-docker run -d qwan-registry:5000/ubuntu_base  
-  /bin/bash -c 'while true; do echo "Hello Docker"; sleep 2; done'
+docker run -d qwan/ubuntu_base /bin/bash -c 'while true; do echo "Hello Docker"; sleep 2; done'
 ```
 
 Try both and explain the difference with 'docker log' and 'docker ps'.
@@ -246,7 +243,7 @@ Use Docker run to pass a MESSAGE environment variable and echo that in
 the echo command similar to our very first:
 
 ```
-docker run -it --rm qwan-registry:5000/ubuntu_base /bin/bash -c 'echo "Hello Docker"'
+docker run -it --rm qwan/ubuntu_base /bin/bash -c 'echo "Hello Docker"'
 ```
 
 ## Defining port forwards
@@ -255,7 +252,7 @@ We have a small container with a web application, quite good at saying
 hello again. Let's fire it up:
 
 ```
-docker run -d qwan-registry:5000/helloworldapp
+docker run -d qwan/helloworldapp
 ```
 
 Verify that it is running with:
@@ -296,7 +293,7 @@ one of them.
 question when working with Docker containers. In a way we would say "why
 should you care": it does not really matter where data resides, as long as it is
 persistent and both your application and a backup system can access it,
-you're fine. 
+you're fine.
 
 One thing you do not want, is that by stopping a container and
 running it again, you would destroy or hide your data.
@@ -316,7 +313,7 @@ docker run -it --rm -v `pwd`/data.txt:/var/data.txt ubuntu_base
   /bin/bash -c 'cat /var/data.txt'
 ```
 
-_Note: the `pwd` substitutes the absolute path of the current directory;
+_Note: the `pwd` (Print Working Directory) substitutes the absolute path of the current directory;
 you need an absolute path for the volume._
 
 This mounts your file as `/var/data.txt` in the container. You can also
