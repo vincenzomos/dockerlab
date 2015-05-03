@@ -309,8 +309,7 @@ Create a file 'data.txt' in the current directory with some interesting
 content. Run the container by typing (on one line):
 
 ```
-docker run -it --rm -v `pwd`/data.txt:/var/data.txt ubuntu_base  
-  /bin/bash -c 'cat /var/data.txt'
+docker run -it --rm -v `pwd`/data.txt:/var/data.txt qwan/ubuntu_base /bin/bash -c 'cat /var/data.txt'
 ```
 
 _Note: the `pwd` (Print Working Directory) substitutes the absolute path of the current directory;
@@ -321,7 +320,7 @@ mount a directory. In this way, data can survive the container.
 
 ## Let's clean up our mess
 
-### Clean up containers
+### Clean up containers a
 
 First stop the container(s) that we have started. Make sure that
 ```
