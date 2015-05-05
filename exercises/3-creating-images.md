@@ -11,14 +11,14 @@ We have provided a very simple web application running on Node.js, in
 exercises/simple_node_app
 ```
 
-Define a Docker image for this web application:
+#### Steps to define a Docker image for this web application:
 
 - in the web application directory, create a file called `Dockerfile`
 
 - specify the base image from which your image derives
 
 ```
-FROM qwan-registry:5000/ubuntu_base
+FROM qwan-registry/ubuntu_base
 ```
 
 - optionally, specify the author of the image
