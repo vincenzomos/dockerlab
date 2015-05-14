@@ -28,9 +28,7 @@ Type:
 ```
 docker run -it --rm qwan/ubuntu_base /bin/echo "Hello Docker"
 ```
-
-The output should show that it is downloading your container. Finally
-at the bottom of your output it shows:
+At the bottom of your output it shows:
 
 *Hello Docker* 
 
@@ -38,16 +36,31 @@ Nice huh?!
 
 ## What happened?
 
-Docker downloaded the docker image ubuntu_base from the docker-repository,
-then it created a container from the image, fired it up, attached a terminal to it, ran
+The image already contained an image 'qwan/ubuntu' .We downloaded this in advance just to be able to proceed quickly with this workshop. So Docker just created a container from the image, fired it up, attached a terminal to it, ran
 
 ```
 /bin/echo "Hello Docker" 
 ```
 
 exited the terminal, stopped the container, and removed it.
+Normally when the image would not have been downloaded. You would have seen something like this. You can of course do this yourself by running the same on an image that needs to be downloaded. (You can find thousands on dockerhub). But keep in mind it might be slow. : 
 
-A bit of a complicated way of saying "Hello Docker", don't you think? 
+```
+dockdev@osboxes:~$ docker run -d qwan/ubuntu_base
+Unable to find image 'qwan/ubuntu_base' locally
+Pulling repository qwan/ubuntu_base
+66fa5a6a79e5: Download complete 
+511136ea3c5a: Download complete 
+d497ad3926c8: Download complete 
+ccb62158e970: Download complete 
+e791be0477f2: Download complete 
+3680052c0f5c: Download complete 
+22093c35d77b: Download complete 
+5506de2b643b: Download complete 
+190a50a30558: Download complete 
+9eb477f32f6424205284c25e81144b3fc015e7b2da8006334b635a7b9e39814e
+dockdev@osboxes:~$ 
+```
 
 ### The output explained further
 
@@ -138,7 +151,7 @@ ps aux | grep bash
 There are a few bash-es running but take a close look at these:
 
 ```
-vagrant 5896  0.0  0.1 188588  5576 pts/1   Sl+  16:25 0:00 docker run -it --rm qwan_registry:5000/ubuntu_base /bin/bash  
+dockdev 5896  0.0  0.1 188588  5576 pts/1   Sl+  16:25 0:00 docker run -it --rm qwan_registry:5000/ubuntu_base /bin/bash  
 root    5923  0.0  0.0  18164  1888 pts/2   Ss+  16:25 0:00 /bin/bash
 ```
 
