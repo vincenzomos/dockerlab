@@ -378,6 +378,6 @@ Clean them up now, we'll move on to images.
 We've seen the `docker images (-a)` command. Docker images has a _-q_
 option as well, which helps you to swiftly remove all images. 
 
-Clean them up so we can proceed to the next exercise.
+You should not remove the containers now. We can use these in the rest of the workshop.
 
 
