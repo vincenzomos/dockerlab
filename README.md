@@ -1,9 +1,5 @@
-# dockerlab
+# Docker workshop at Sogeti
 
-docker handson lab held at jfall
+This docker workshop is a fork of the docker handson lab held at jfall 2014
 
-## Setup 
 
-execute instructions
-
-replace qwan-registry:5000 by qwan (see images on dockerhub)
