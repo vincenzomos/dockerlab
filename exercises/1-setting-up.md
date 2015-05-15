@@ -35,17 +35,8 @@ VirtualBox, where you can then start it.
 The image is a basic Linux image with some necesseties installed and
 some configuration prepared. The installed packages are:
 
-* Docker (1.2.0) 
-* Maestro-ng
-
-It also contains some configuration needed to work effectively in a
-conference setup. Docker images can be large, and we
-transport them over a network connnection, so to ensure everything works
-smoothly we have set up:
-
-* a local network
-* our own Ubuntu packages mirror
-* our own Docker registry
+* Docker (1.6.0)
+* Docker Compose (1.2.0)
 
 
 

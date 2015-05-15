@@ -43,7 +43,8 @@ The image already contained an image 'qwan/ubuntu' .We downloaded this in advanc
 ```
 
 exited the terminal, stopped the container, and removed it.
-Normally when the image would not have been downloaded. You would have seen something like this. You can of course do this yourself by running the same on an image that needs to be downloaded. (You can find thousands on dockerhub). But keep in mind it might be slow. : 
+Normally when the image would not have been downloaded. You would have seen something like this. You can of course do this yourself by running the same on an image that needs to be downloaded. (You can find thousands on dockerhub).
+But keep in mind it might be slow. :
 
 ```
 dockdev@osboxes:~$ docker run -d qwan/ubuntu_base
