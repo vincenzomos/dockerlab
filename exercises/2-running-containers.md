@@ -247,18 +247,10 @@ option to the run command. For example:
 docker run [other options] -e MESSAGE:"Hello Environment" <container name> [command]
 ```
 
-passes the MESSAGE environment to the Docker container. You can check
+passes the MESSAGE environment to the Docker container. Go ahead and check
 this by starting bash as command and use `env` or `echo $MESSAGE` to check
 its existence.
 
-But let's try something more interesting. 
-
-Use Docker run to pass a MESSAGE environment variable and echo that in
-the echo command similar to our very first:
-
-```
-docker run -it --rm qwan/ubuntu_base /bin/bash -c 'echo "Hello Docker"'
-```
 
 ## Defining port forwards
 
