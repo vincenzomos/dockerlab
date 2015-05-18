@@ -47,7 +47,7 @@ Using Compose is basically a three-step process. (Also see https://docs.docker.c
 For this exercise create a Dockerfile in exercises/compose_exercise
 The Dockerfile actually is the same as the one for the previous exercise. 
 
-Create the docker-compose.yml. Underneath is an example of a web abb using a database.
+Create the docker-compose.yml. Underneath is an example of a web app using a database (From the documentation).
 
 ```
 web:
