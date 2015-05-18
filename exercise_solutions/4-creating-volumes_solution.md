@@ -5,7 +5,7 @@ title: Defining volumes
 
 ## Exercise: create a volume 
 
-*Solution: Dockerfile for Volume exercise
+###Solution: Dockerfile for Volume exercise*
 
 ```
 FROM qwan/ubuntu_base
@@ -23,9 +23,16 @@ EXPOSE 8099
 CMD ["/usr/bin/nodejs", "service.js"]
 
 ```
+Build the image
 
 ```
-docker run -d -p 8099:8099 -v data:/var/data simple
+docker build -t simple_node_service .
+```
+
+Run the image
+```
+docker run -d -p 8099:8099 -v /home/dockdev/exercises/simple_node_service/data:/var/data simple_node_service
+
 ```
 
 Note that you have to provide an absolute path to the directory you are
