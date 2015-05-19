@@ -61,6 +61,8 @@ db:
 ```
 Now you have to figure out how to connect the webapp to the service. 
 
-Afterwards run docker-compose-up. 
-
+Make your changes and afterwards run : 
+```
+docker-compose-up 
+```
 
