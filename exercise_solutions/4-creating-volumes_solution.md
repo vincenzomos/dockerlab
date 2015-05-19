@@ -9,12 +9,8 @@ title: Defining volumes
 
 Create the Dockerfile in exercises/simple_node_service
 ```
-FROM qwan/ubuntu_base
+FROM node_base
 MAINTAINER Vincent Mos
-
-RUN apt-get update && apt-get install -y nodejs npm
-
-WORKDIR /opt/app
 
 ADD node_modules /opt/app/node_modules
 ADD service.js /opt/app/service.js
