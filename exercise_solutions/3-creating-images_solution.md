@@ -58,7 +58,7 @@ build the image :
 docker build -t node_base .
 ```
 
-###Updated simple_node image: Dockerfile
+###Updated simple_node_app image: Dockerfile
 
 ```
 FROM node_base
