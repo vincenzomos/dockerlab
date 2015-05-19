@@ -5,7 +5,7 @@ title: Creating images
 
 ## Exercise: define an image for a web application
 
-*Solution: Dockerfile simple_node_app*
+###Solution: Dockerfile simple_node_app
 ```
 FROM qwan/ubuntu_base
 MAINTAINER Vincent Mos
@@ -41,7 +41,7 @@ duplication, we want to extract a common base image with Node.js in it.
 - Build and run that image
 
 
-*Solution : Dockerfile node_base*
+###Solution : Dockerfile node_base
 create a new dir for example : custom_nodejs_base.
 
 Create a Dockerfile with the following content.
@@ -51,13 +51,14 @@ Create a Dockerfile with the following content.
  MAINTAINER Vincent Mos
 
  RUN apt-get update && apt-get install -y nodejs npm
- ``
+```
+
 build the image :
 ```
 docker build -t node_base .
 ```
 
-*Updated simple_node image: Dockerfile*
+###Updated simple_node image: Dockerfile
 
 ```
 FROM node_base
