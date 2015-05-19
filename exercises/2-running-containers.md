@@ -1,6 +1,5 @@
 ---
-layout: page
-title: Running containers
+# Running containers
 ---
 
 Open up a terminal (pressing your windows key and start typing

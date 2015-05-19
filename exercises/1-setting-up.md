@@ -1,6 +1,5 @@
 ---
-layout: page
-title: Setting up
+# Setting up
 ---
 
 It is advised to use our provided images, to let this
@@ -37,6 +36,3 @@ some configuration prepared. The installed packages are:
 
 * Docker (1.6.0)
 * Docker Compose (1.2.0)
-
-
-
