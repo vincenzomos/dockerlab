@@ -5,8 +5,9 @@ title: Defining volumes
 
 ## Exercise: create a volume 
 
-###Solution: Dockerfile for Volume exercise*
+###Solution: Dockerfile for Volume exercise
 
+Create the Dockerfile in exercises/simple_node_service
 ```
 FROM qwan/ubuntu_base
 MAINTAINER Vincent Mos
