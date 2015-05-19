@@ -36,7 +36,7 @@ you run it with --link)
 
 Running linked containers together in the right order by hand is a bit
 of a hassle. This becomes worse if you have many small services working
-together. So we need something different to handle this. Docker Compose provides the tools for this
+together. So we need something different to handle this. *Docker Compose* provides the tools for this
 
 Using Compose is basically a three-step process. (Also see https://docs.docker.com/compose/)
 
