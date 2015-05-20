@@ -1,6 +1,5 @@
 ---
-layout: page
-title: Defining volumes
+#  Defining volumes
 ---
 
 ## Exercise: create a volume 
