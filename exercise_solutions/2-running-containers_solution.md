@@ -15,8 +15,7 @@ and
 docker images -a
 ```
 
-Explain the difference in output.
-Answer:
+#### Explanation of  the difference in output.
 *docker images* will show all images in a completed state. That is after all modifications were done on an image.
 *docker images -a*  will show all intermediate images as well. For each instruction in a Dockerfile an image will be tagged with an ID.
 
@@ -46,20 +45,18 @@ docker run -d qwan/ubuntu_base /bin/bash -c 'while true; do echo "Hello Docker";
 
 Try both and explain the difference with 'docker log' and 'docker ps'.
 
-*Explanation : * The first one just resumes where it stopped the first time. The latter one will start a new container.
+####Explanation : 
+The first one just resumes where it stopped the first time. The latter one will start a new container.
 
 ## Passing environment variables
 
 Solution for showing MESSAGE
-
 
 ```
 docker run -it --rm qwan/ubuntu_base /bin/bash -c env
 ```
 
 ## Defining port forwards
-
-
 
 ```
 docker run -p <host:port>:<forward port> ....
@@ -132,15 +129,16 @@ docker ps -a -q
 shows just the hashes of all containers, what would be a fast way to
 remove all containers from your host?
 
-Clean them up now, we'll move on to images.
-
-Solution : is the first one just resumes where it stopped the first time. The latter one will start a new container.
+####Solution : for easy removal
+```
+docker rm $(docker ps -a -q)
+```
 
 ### Cleaning up images
 
 We've seen the `docker images (-a)` command. Docker images has a _-q_
 option as well, which helps you to swiftly remove all images. 
 
-You should not remove the containers now. We can use these in the rest of the workshop.
+You should not remove the images now. We can use these in the rest of the workshop.
 
 
