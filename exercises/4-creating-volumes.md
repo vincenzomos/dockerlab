@@ -38,3 +38,8 @@ mounting.
 
 Use `curl` or a browser to send a request to the service. Does it work?
 
+
+## Exercies: creating and using a data volume container
+
+
+    docker run --volumes-from {container} training/postgress
