@@ -1,6 +1,5 @@
 ---
-layout: page
-title: Container orchestration
+#  Container orchestration
 ---
 
 With Docker, you create containers that each encapsulate a single service or application. 
@@ -49,16 +48,16 @@ The Dockerfile actually is the same as the one for the previous exercise.
 
 Create the docker-compose.yml. Underneath is an example of a web app using a database (From the documentation).
 
-```
-web:
-  build: .
-  links:
-   - db
-  ports:
-   - "8000:8000"
-db:
-  image: postgres
-```
+    web:
+      build: .
+    links:
+      - db
+    ports:
+      - "8000:8000"
+    db:
+      image: postgres
+
+
 Now you have to figure out how to connect the webapp to the service. 
 
 Make your changes and afterwards run : 

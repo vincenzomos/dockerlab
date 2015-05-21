@@ -1,6 +1,5 @@
 ---
-layout: page
-title: Creating images
+# Creating images
 ---
 
 ## Exercise: define an image for a web application
