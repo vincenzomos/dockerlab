@@ -17,7 +17,7 @@ exercises/simple_node_app
 - specify the base image from which your image derives
 
 ```
-FROM qwan-registry/ubuntu_base
+FROM qwan/ubuntu_base
 ```
 
 - optionally, specify the author of the image
