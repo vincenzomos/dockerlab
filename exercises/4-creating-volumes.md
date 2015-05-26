@@ -59,3 +59,6 @@ docker run -d -p 8099:8099 --volumes-from mydata your_image_name
 ```
 
 Now create a new data volume container with another data source and start the node service with this new datasource. 
+
+
+Stop the service after you are done.
