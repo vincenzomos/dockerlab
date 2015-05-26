@@ -8,20 +8,44 @@ Docker  provides the concept of _container linking_ for this.
 
 ## Exercise: linking two containers
 
-We have provided a modified web application
-that does an HTTP GET request to `http://service:8099` and passes the data on to the response. 
+We have provided a wordpress application
+
 You can find the code for this application in 
 
 ```
-exercises/linked_node_app
+exercise/wordpress
+
+```		
+
+- extract the wordpress sources _sources/latest.tar.gz_
+- copy the _router.php_ and _wp-config.php_ files from the sources to the wordpress directory
+- Create a Dockerfile for the wordpress application. Base it on the _sogeti:5000/php5_ image. Add the '.' directory as '/code'
+- Build the wordpress image
+
+
+And start wordpress
+```
+docker run -d -p 8080:8080 wordpress_image_name php -S 0.0.0.0:8080 -t /code
 ```
 
-- create a Dockerfile for the web application and build the image
-- run the node service from the previous exercise, and give it a name: '--name service'
-- run the web application and link it to the service:
+Go to localhost:8080...
+however, you will get: 
+**Error establishing a database connection**
+
+Why? Because it has no database. The postgresql db needs to be linked to the worpress image
+
+Stop the worpress container and start the database.
+
+Create a container for a db:
 
 ```
-docker run -d -p 8090:8090 --link service:service your_web_app_image_name
+docker run -d --name mydb -e MYSQL_DATABASE=wordpress sogeti:5000/mysql
+```
+
+Now start the wordpress again, but this time link it to the database: 
+
+```
+docker run -d -p 8080:8080 --link mydb:db wordpress_image_name php -S 0.0.0.0:8080 -t /code
 ```
 
 Try it out. What happens?
@@ -43,22 +67,27 @@ Using Compose is basically a three-step process. (Also see https://docs.docker.c
 2. Next, you define the services that make up your app in docker-compose.yml so they can be run together in an isolated environment:
 3. Lastly, run docker-compose up and Compose will start and run your entire app.
 
-For this exercise create a Dockerfile in exercises/compose_exercise
+For this exercise create a Dockerfile in exercise/wordpress
 The Dockerfile actually is the same as the one for the previous exercise. 
 
 Create the docker-compose.yml. Underneath is an example of a web app using a database (From the documentation).
 
     web:
       build: .
+      command: /bin/bash
     links:
       - db
     ports:
       - "8000:8000"
+    volumes:
+      - .:/my_path
     db:
-      image: postgres
+      image: a_db_image
+      environment: 
+        MY_KEY: my_value
 
 
-Now you have to figure out how to connect the webapp to the service. 
+Now you have to figure out how to connect the wordpress to the service. 
 
 Make your changes and afterwards run : 
 ```

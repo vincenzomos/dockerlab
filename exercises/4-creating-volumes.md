@@ -9,7 +9,7 @@ container. Now we are going to mount a directory that is used by a web
 service. We have provide a Node.js based service that serves data from a file, in:
 
 ```
-exercises/simple_node_service
+exercise/simple_node_service
 ```
 
 If you inspect `service.js`, you will see that it serves the content of
@@ -41,5 +41,24 @@ Use `curl` or a browser to send a request to the service. Does it work?
 
 ## Exercise: creating and using a data volume container
 
+Stop the container you were just running.
 
-    docker run --volumes-from {container} training/postgress
+
+First we create a data volume container.
+
+```
+docker create -v /var/tmp/data/:/var/data --name mydata sogeti:5000/ubuntu /bin/true
+```
+
+This is a data volume container, that has a map for the /var/data volume. It is not running, it was merely created. You can see it by viewing docker ps -a.
+
+Now start 
+
+```
+docker run -d -p 8099:8099 --volumes-from mydata your_image_name
+```
+
+Now create a new data volume container with another data source and start the node service with this new datasource. 
+
+
+Stop the service after you are done.
