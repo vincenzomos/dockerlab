@@ -7,7 +7,7 @@
 We have provided a very simple web application running on Node.js, in
 
 ```
-exercises/simple_node_app
+exercise/simple_node_app
 ```
 
 #### Steps to define a Docker image for this web application:
@@ -17,7 +17,7 @@ exercises/simple_node_app
 - specify the base image from which your image derives
 
 ```
-FROM qwan/ubuntu_base
+FROM sogeti:5000/ubuntu
 ```
 
 - optionally, specify the author of the image
@@ -31,8 +31,7 @@ use apt-get to install `nodejs` and the node package manager `npm`;
 first make sure you have the latest list of packages
 
 ```
-RUN apt-get update && 
-    apt-get install -y nodejs npm
+RUN apt-get update && apt-get install -y nodejs npm
 ```
 
 Note that the RUN instruction will be executed when you _build_ the image
@@ -90,7 +89,8 @@ See if it works with `curl`:
 curl -v localhost:8090
 ```
 
-Leave out the -v so see just the response body.
+Leave out the -v so see just the response body. 
+**note**:  it will be on one line with the command prompt
 
 How can you see if the container is running? Take a look at the
 container's logs.
