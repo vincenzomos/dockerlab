@@ -102,7 +102,7 @@ Stop the container.
 We want to define several service images based on Node.js. To prevent
 duplication, we want to extract a common base image with Node.js in it.
 
-- Define a new image that derives from ubuntu_base
+- Define a new image that derives from sogeti:5000/ubuntu
   (in a separate directory)
 - Add the node and npm packages to this image
 - Build the image and tag it 'node-base'
