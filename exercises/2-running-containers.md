@@ -262,7 +262,7 @@ We can pass environment variables to a Docker container with the _-e_
 option to the run command. For example:
 
 ```
-docker run [other options] -e MESSAGE="Hello Environment" <container name> [command]
+docker run [other options] -e MESSAGE="Hello Environment" <image name> [command]
 ```
 
 passes the MESSAGE environment to the Docker container. Go ahead and check
